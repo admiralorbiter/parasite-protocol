@@ -22,3 +22,10 @@ This folder contains a starter documentation set for developing **Parasite Proto
 Each system doc includes a *Definition of Done* checklist to keep implementation crisp.
 
 Good luck — and have fun making cells suffer.
+
+## Added docs
+- Technical_Architecture.md
+- Systems/Economy.md
+- Systems/Enemies.md
+- Systems/Arena_Map.md
+- Systems/Tracks.md
