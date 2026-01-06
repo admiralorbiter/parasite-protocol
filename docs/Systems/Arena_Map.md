@@ -9,8 +9,9 @@ This doc describes the arena representation and gameplay rules for the cell map.
 ## 1) Coordinate system & scale
 - World units: arbitrary (e.g., 1.0 = 1 tile width)
 - The cell is a **circular arena**:
-  - `cell_radius` (e.g., 50 world units)
+  - `cell_radius` (75 world units - increased from 50 for better gameplay space)
 - Membrane ring thickness is visual; collision boundary is the ring edge.
+- Organelles scale proportionally with cell radius to maintain relative sizes.
 
 ---
 
@@ -99,7 +100,8 @@ Procedural approach outline:
 
 ## Definition of Done
 - [ ] Arena loads from a layout definition (data-driven).
-- [ ] Organelles block movement and affect zones (ATP, factory origin).
+- [x] Organelles rendered (nucleus, ER/Golgi, mitochondria) with proper z-ordering.
+- [ ] Organelles block movement and affect zones (ATP, factory origin) - visual only currently.
 - [ ] Membrane segments exist and can spawn breach openings.
 - [ ] Navigation grid/flow field works for enemy movement.
 - [ ] At least 3 layouts feel distinct and fair.

@@ -11,8 +11,16 @@ Last Updated: 2026-01-06
   
 - [x] **Map renderer (basic)** (`arena_map.rs`)
   - Membrane ring rendered as a circle
-  - CellRadius resource configured (50.0 units)
+  - CellRadius resource configured (75.0 units - increased for better gameplay space)
   - Basic visual foundation in place
+  
+- [x] **Organelles** (`arena_map.rs`)
+  - Nucleus rendered at center (purple, 9 units radius scaled)
+  - ER/Golgi rendered offset from center (yellow/orange, 7 units radius scaled)
+  - 3 Mitochondria rendered in annulus band (red/orange, 6 units radius scaled)
+  - Organelles scale proportionally with cell size
+  - Proper z-ordering (membrane z=0, organelles z=1) to prevent flickering
+  - Organelle components and types exported for other systems
 
 - [x] **Basic UI framework (pan/zoom)** (`core_camera.rs`)
   - Keyboard panning (WASD/Arrow keys)
@@ -42,10 +50,10 @@ Last Updated: 2026-01-06
   - Placement previews
 
 - [ ] **Arena map features** (from Arena_Map.md)
-  - Organelles (nucleus, ER/Golgi, mitochondria) not rendered
-  - Membrane segments (currently just visual circle)
-  - Breach mechanics not implemented
-  - Navigation grid/flow field missing
+  - ✅ Organelles (nucleus, ER/Golgi, mitochondria) rendered
+  - [ ] Membrane segments (currently just visual circle)
+  - [ ] Breach mechanics not implemented
+  - [ ] Navigation grid/flow field missing
 
 ## Phase 1 — Combat Basics
 - [ ] Enemy spawner + movement
@@ -61,12 +69,9 @@ All future phases are not yet started.
 ## Recommended Next Steps
 
 ### Priority 1: Complete Phase 0 Foundation
-1. **Add organelles to arena** (`arena_map.rs`)
-   - Render nucleus (center, objective)
-   - Render ER/Golgi (manufacturing origin)
-   - Render mitochondria (ATP zones)
-   - Use simple colored circles/sprites for MVP
-   - This is foundational for all other systems
+1. ✅ **Add organelles to arena** (`arena_map.rs`) - COMPLETED
+   - Nucleus, ER/Golgi, and mitochondria rendered with proper z-ordering
+   - Organelles scale proportionally with cell size
 
 2. **Create core_selection plugin**
    - Mouse picking system
@@ -99,8 +104,8 @@ Once Phase 0 is solid:
 
 ### Plugins Implemented
 - ✅ `core_time` - Time control (pause/speed)
-- ✅ `core_camera` - Camera controls (pan/zoom/bounds)
-- ✅ `arena_map` - Basic membrane rendering (needs organelles)
+- ✅ `core_camera` - Camera controls (pan/zoom/bounds, updated for 75 unit cell radius)
+- ✅ `arena_map` - Membrane rendering + organelles (nucleus, ER/Golgi, mitochondria)
 
 ### Plugins Missing (from Technical_Architecture.md)
 - ❌ `core_selection` - Mouse picking, tooltips
@@ -125,8 +130,11 @@ Once Phase 0 is solid:
 
 ## Notes
 - Project compiles and runs successfully ✅
-- Basic window opens and displays blue membrane circle ✅
+- Window opens and displays cell with membrane and organelles ✅
+- Organelles render without flickering (proper z-ordering) ✅
+- Cell size increased to 75 units radius for better gameplay space ✅
 - Camera controls work (pan/zoom) ✅
 - Time controls work (pause/speed) ✅
+- Organelles are queryable by other systems ✅
 - Ready to build on this foundation
 

@@ -28,11 +28,15 @@ pub struct CameraBounds {
 
 impl Default for CameraBounds {
     fn default() -> Self {
+        // Camera bounds set to accommodate cell radius of 75.0
+        // Add some padding for comfortable viewing
+        let cell_radius = 75.0;
+        let padding = 25.0;
         Self {
-            min_x: -100.0,
-            max_x: 100.0,
-            min_y: -100.0,
-            max_y: 100.0,
+            min_x: -(cell_radius + padding),
+            max_x: cell_radius + padding,
+            min_y: -(cell_radius + padding),
+            max_y: cell_radius + padding,
         }
     }
 }
