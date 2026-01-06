@@ -164,8 +164,8 @@ Within fixed-timestep schedule:
 ---
 
 ## 10) Definition of Done (Architecture)
-- [ ] Project compiles and runs with plugin separation.
-- [ ] Fixed timestep sim with pause/speed controls.
+- [x] Project compiles and runs with plugin separation.
+- [x] Fixed timestep sim with pause/speed controls.
 - [ ] Content loaded from data files with validation.
 - [ ] Debug panel exists to spawn enemies and adjust resources.
 - [ ] No single system dominates frame time in MVP stress test.
